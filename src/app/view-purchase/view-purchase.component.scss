@@ -1,0 +1,79 @@
+.main-divider{
+    border: 3px solid blue;
+    margin: 1%;
+    padding: 1%;
+}
+.header-class{
+    text-align: center;
+}
+.main-form{
+    border: 3px solid greenyellow;
+    margin-bottom:2% ;
+    margin: 1%;
+    padding: 1%;
+}
+.form-class-main-divider{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    margin-top: 2%;
+    margin: 1%;
+    padding: 1%;
+    margin-bottom:2% ;
+    border: 3px solid rgb(55, 155, 185);
+    margin-bottom:2% ;
+}
+.form-class-second-divider{
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: 2fr 2fr ;
+    margin-top: 2%;
+    margin: 1%;
+    padding: 1%;
+    margin-bottom:2% ;
+    border: 3px solid rgb(55, 155, 185);
+    margin-bottom:2% ;
+}
+.form-class-third-divider{
+    display: flex;
+    justify-content:right;
+    grid-template-columns: 2fr 2fr ;
+    margin-top: 2%;
+    margin: 1%;
+    padding: 1%;
+    margin-bottom:2% ;
+    border: 3px solid rgb(218, 26, 26);
+    margin-bottom:2% ;
+}
+.form-class-fourth-divider{
+    display: flex;
+    justify-content:left;
+    grid-template-columns: 2fr 2fr ;
+    margin-top: 2%;
+    margin: 1%;
+    padding: 1%;
+    margin-bottom:2% ;
+    border: 3px solid rgb(210, 198, 33);
+    margin-bottom:2% ;
+}
+.form-class-fifth-divider{
+    display: flex;
+    justify-content:space-between;
+    grid-template-columns: 2fr 2fr ;
+    margin-top: 2%;
+    margin: 1%;
+    padding: 1%;
+    margin-bottom:2% ;
+    border: 3px solid rgb(71, 89, 230);
+    margin-bottom:2% ;
+}
+.form-class-sixth-divider{
+    display: flex;
+    justify-content:space-around;
+    grid-template-columns: 2fr 2fr ;
+    margin-top: 2%;
+    margin: 1%;
+    padding: 1%;
+    margin-bottom:2% ;
+    border: 3px solid rgb(20, 147, 190);
+    margin-bottom:2% ;
+}

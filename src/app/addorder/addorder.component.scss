@@ -1,0 +1,36 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.main-divider{
+    border: 3px solid #7360DF;
+    margin: 1%;
+    padding: 1%;
+  
+   
+}
+h3{
+    text-align: center;
+  
+    
+}
+.form-divider-one{
+    border: 2px solid #64CCC5 ;
+    margin: 1%;
+    padding: 1%;
+}
+.form-divider-indivder{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    text-align: center;
+}
+.enter-to-table{
+    font-size: 20px;
+    margin: 11%;
+    width: 140px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: #419197;
+    
+}
