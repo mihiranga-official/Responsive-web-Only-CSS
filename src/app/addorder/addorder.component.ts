@@ -44,6 +44,9 @@ addItem(){
    
   }
 }
+
+//when click remoove button in the row 
+//this pop method can pop out the relevent row 
 removeItem(){
   this.items.pop()
 }
