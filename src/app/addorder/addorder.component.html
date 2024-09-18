@@ -3,19 +3,26 @@
     <h3>Add Order Section</h3>
     <div class="form-divider-one">
       <div class="form-divider-indivder">
+            <!-- <div class="">
+          <label for="">Order Id:</label> <input  [(ngModel)]="newOrder.orderId" [ngModelOptions]="{standalone:true}" type="text" />
+        </div> -->
         <div class="">
-          <label for="">Order Name:</label> <input type="text" />
+          <label for="">Order Name:</label> 
+          <input  [(ngModel)]="newOrder.orderName" [ngModelOptions]="{standalone:true}" type="text" />
         </div>
         <div class="">
-          <label for="">Customer Name:</label> <input type="text" />
+          <label for="">Customer Name:</label> 
+          <input [(ngModel)]="newOrder.customername" [ngModelOptions]="{standalone:true}" type="text" />
         </div>
         <div class="">
-          <label for="">Customer T.P Number:</label> <input type="text" />
+          <label for="">Customer T.P Number:</label> 
+          <input [(ngModel)]="newOrder.customerTele" [ngModelOptions]="{standalone:true}"  type="text" />
         </div>
         <div class="">
-          <label for="">Customer Address:</label> <input type="text" />
+          <label for="">Customer Address:</label> 
+          <input [(ngModel)]="newOrder.customerAddress" [ngModelOptions]="{standalone:true}"  type="text" />
         </div>
-        <button class="enter-to-table">Add to table</button>
+        <button (click)="addItem()" class="enter-to-table">Add to table</button>
       </div>
       <div>
         
@@ -28,19 +35,24 @@
             <th>Customer Name</th>
             <th>Customer Telephone Number</th>
             <th>Customer Address</th>
+            <th>Remove </th>
+
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
+          <tr  *ngFor="let item of items;let i=index">
+            <td>{{i+1}}</td>
+            
+            <td>{{item.orderName}}</td>
+            <td>{{item.customername}}</td>
+            <td>{{item.customerTele}}</td>
+            <td>{{item.customerAddress}}</td>
+            <td><button (click)="removeItem()">Remove</button></td>
+
           </tr>
         </tbody>
       </table>
-      <table class="right-table">
+      <!-- <table class="right-table">
         <thead>
           <tr>
             <th>1</th>
@@ -57,7 +69,10 @@
             <td>ggh</td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
+    </div>
+    <div class="second-divider">
+      
     </div>
   </form>
 </div>
