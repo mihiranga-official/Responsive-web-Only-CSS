@@ -16,7 +16,8 @@
         </div>
         <div class="">
           <label for="">Customer T.P Number:</label> 
-          <input [(ngModel)]="newOrder.customerTele" [ngModelOptions]="{standalone:true}"  type="text" />
+          <input [(ngModel)]="newOrder.customerTele" required maxlength="10"  pattern="[0-9]{10}"    [ngModelOptions]="{standalone:true}"     type="text"  #tp="ngModel"/>
+
         </div>
         <div class="">
           <label for="">Customer Address:</label> 
@@ -47,7 +48,7 @@
             <td>{{item.customername}}</td>
             <td>{{item.customerTele}}</td>
             <td>{{item.customerAddress}}</td>
-            <td><button (click)="removeItem()">Remove</button></td>
+            <td><button style="background-color: red;" (click)="removeItem()">X</button></td>
 
           </tr>
         </tbody>
