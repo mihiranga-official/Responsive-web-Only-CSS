@@ -16,14 +16,19 @@ h3{
     
 }
 .form-divider-one{
-    border: 2px solid #64CCC5 ;
+    border: 2px solid #9b1094 ;
     margin: 1%;
     padding: 1%;
 }
 .form-divider-indivder{
+
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-columns: repeat(6, 1fr);
     text-align: center;
+    border: 2px dotted red;
+    align-items: center; /* Centers vertically */
+   place-items: center;
+
 }
 .enter-to-table{
     font-size: 20px;
@@ -33,6 +38,15 @@ h3{
     border-radius: 7px;
     background-color: #1680d7;
     
+    
 }.second-divider{
     border: 2px solid #13c788;
+   
+}
+.removr{
+  
+    width:100px;
+    height: 20px
+    
+    
 }

@@ -1,3 +1,5 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
 /* You can add global styles to this file, and also import other style files */
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -184,10 +186,10 @@ th,
 td,
 thead,
 tbody {
-  border: 2px solid dodgerblue;
+  border: 1px solid dodgerblue;
   margin: 1%;
   padding: 1%;
-  width: 600px;
+  width: 1090px;
   height: 20px;
   text-align: center;
 }

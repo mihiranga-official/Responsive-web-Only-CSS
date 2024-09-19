@@ -1,3 +1,4 @@
+
 <div class="main-divider">
   <form action="" class="form-divider">
     <h3>Add Order Section</h3>
@@ -9,6 +10,11 @@
         <div class="">
           <label for="">Order Name:</label> 
           <input  [(ngModel)]="newOrder.orderName" [ngModelOptions]="{standalone:true}" type="text" />
+          <!-- <select name="" id="">
+            <option value="">1</option>
+            <option value="">1</option>
+            <option value="">1</option>
+          </select> -->
         </div>
         <div class="">
           <label for="">Customer Name:</label> 
@@ -23,7 +29,7 @@
           <label for="">Customer Address:</label> 
           <input [(ngModel)]="newOrder.customerAddress" [ngModelOptions]="{standalone:true}"  type="text" />
         </div>
-        <button (click)="addItem()" class="enter-to-table">Add to table</button>
+        <button (click)="addItem()" class="enter-to-table">Add to table <i class="fa fa-add"></i></button>
       </div>
       <div>
         
@@ -48,8 +54,8 @@
             <td>{{item.customername}}</td>
             <td>{{item.customerTele}}</td>
             <td>{{item.customerAddress}}</td>
-            <td><button style="background-color: red;" (click)="removeItem()">X</button></td>
-
+           
+    <td><button class="removr"  (click)="removeItem()"> <i class="fa fa-close"></i> </button></td> 
           </tr>
         </tbody>
       </table>
@@ -73,7 +79,7 @@
       </table> -->
     </div>
     <div class="second-divider">
-      
+   
     </div>
   </form>
 </div>

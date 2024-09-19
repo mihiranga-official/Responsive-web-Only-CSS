@@ -47,6 +47,11 @@ addItem(){
 
 //when click remoove button in the row 
 //this pop method can pop out the relevent row 
+// removeItem(index:number){
+//   this.items.splice(index,1)
+// }
+// }
+
 removeItem(){
   this.items.pop()
 }
