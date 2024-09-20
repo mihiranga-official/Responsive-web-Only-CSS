@@ -1,86 +1,88 @@
-
 <div class="main-divider">
   <form action="" class="form-divider">
     <h3>Add Order Section</h3>
     <div class="form-divider-one">
       <div class="form-divider-indivder">
-            <!-- <div class="">
+        <!-- <div class="">
           <label for="">Order Id:</label> <input  [(ngModel)]="newOrder.orderId" [ngModelOptions]="{standalone:true}" type="text" />
         </div> -->
         <div class="">
-          <label for="">Order Name:</label> 
-          <input  [(ngModel)]="newOrder.orderName" [ngModelOptions]="{standalone:true}" type="text" />
-          <!-- <select name="" id="">
-            <option value="">1</option>
-            <option value="">1</option>
-            <option value="">1</option>
-          </select> -->
-        </div>
-        <div class="">
-          <label for="">Customer Name:</label> 
-          <input [(ngModel)]="newOrder.customername" [ngModelOptions]="{standalone:true}" type="text" />
-        </div>
-        <div class="">
-          <label for="">Customer T.P Number:</label> 
-          <input [(ngModel)]="newOrder.customerTele" required maxlength="10"  pattern="[0-9]{10}"    [ngModelOptions]="{standalone:true}"     type="text"  #tp="ngModel"/>
+          <label for="">Order Name</label>
 
+           <select  name="" id=""  [(ngModel)]="newOrder.orderName" [ngModelOptions]="{standalone:true}">
+            <option value="" disabled selected>Select Order</option>
+            <option  value="Rice & Curry LKR: 350">Rice & Curry LKR: 350</option>
+            <option value="Fish Bun LKR: 50">Fish Bun LKR: 50</option>
+            <option value="Jam Bun LKR: 45">Jam Bun LKR: 45</option>
+            <option value="Sausage  Bun LKR: 100">Sausage  Bun LKR: 100</option>
+          </select> 
         </div>
         <div class="">
-          <label for="">Customer Address:</label> 
-          <input [(ngModel)]="newOrder.customerAddress" [ngModelOptions]="{standalone:true}"  type="text" />
+          <label for="">Customer Name</label>
+          <input
+            [(ngModel)]="newOrder.customername"
+            [ngModelOptions]="{ standalone: true }"
+            type="text"
+          />
         </div>
-        <button (click)="addItem()" class="enter-to-table">Add to table <i class="fa fa-add"></i></button>
+        <div class="">
+          <label for="">Customer T.P Number</label>
+          <input
+            [(ngModel)]="newOrder.customerTele"
+            required
+            maxlength="10"
+            pattern="[0-9]{10}"
+            [ngModelOptions]="{ standalone: true }"
+            type="text"
+            #tp="ngModel"
+          />
+        </div>
+        <div class="">
+          <label for="">Discount </label>
+
+          <select    name="" id=""  [(ngModel)]="newOrder.discountPrice" [ngModelOptions]="{standalone:true}">
+            <option value="" disabled selected>Select Discount %</option>
+            <option  value="1%">1% </option>
+            <option  value="0%">0% </option>
+            <option value="2%">2%</option>
+            <option value="5%">5%</option>
+            <option value="10%">10%</option>
+          </select> 
+        </div>
+        <button (click)="addItem()" class="enter-to-table">
+          Add to table <i class="fa fa-add"></i>
+        </button>
       </div>
-      <div>
-        
-      </div>
-      <table class="left-table">
+      <div></div>
+      <table class="left-table" style="width: auto">
         <thead>
           <tr>
             <th>Order Id</th>
             <th>Order Name</th>
             <th>Customer Name</th>
-            <th>Customer Telephone Number</th>
-            <th>Customer Address</th>
-            <th>Remove </th>
-
+            <th>Customer Number</th>
+            <th>Discount Price</th>
+            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
-          <tr  *ngFor="let item of items;let i=index">
+          <tr *ngFor="let item of items; let i = index">
+            <td>{{ item.orderId }}</td>
+            <td>{{ item.orderName }}</td>
+            <td>{{ item.customername }}</td>
+            <td>{{ item.customerTele }}</td>
 
-            
-            <td>{{item.orderId}}</td>
-            <td>{{item.orderName}}</td>
-            <td>{{item.customername}}</td>
-            <td>{{item.customerTele}}</td>
-            <td>{{item.customerAddress}}</td>
-           
-    <td><button class="removr"  (click)="removeItem(item.orderId)"> <i class="fa fa-close"></i> </button></td> 
+            <td>{{ item.discountPrice }}</td>
+
+            <td>
+              <button class="removr" (click)="removeItem(item.orderId)">
+                <i class="fa fa-close"></i>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
-      <!-- <table class="right-table">
-        <thead>
-          <tr>
-            <th>1</th>
-            <th>1</th>
-            <th>1</th>
-            <th>1</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ggh</td>
-            <td>ggh</td>
-            <td>ggh</td>
-            <td>ggh</td>
-          </tr>
-        </tbody>
-      </table> -->
     </div>
-    <div class="second-divider">
-   
-    </div>
+    <div class="second-divider"></div>
   </form>
 </div>

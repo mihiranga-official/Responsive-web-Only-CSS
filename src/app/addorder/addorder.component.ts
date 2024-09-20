@@ -17,31 +17,32 @@ export class AddorderComponent {
     orderName: '',
     customername: '',
     customerTele: '',
-    customerAddress: '',
+    discountPrice: '',
   }
 
   items: Array<{
     orderId: string
     orderName: string,
-    customername: string, customerTele: string, customerAddress: string
+    customername: string,
+    customerTele: string,
+    discountPrice: string
   }> = []
 
   addItem() {
-    if (this.newOrder.orderName && this.newOrder.customername && this.newOrder.customerTele && this.newOrder.customerAddress) {
+    if ( this.newOrder.customername && this.newOrder.customerTele && this.newOrder.orderName && this.newOrder.discountPrice   ) {
       const newId = this.items.length + 1;
 
 
       this.items.push({
         orderId: newId.toString(),
-        orderName: this.newOrder.orderName,
+       orderName: this.newOrder.orderName,
         customername: this.newOrder.customername,
         customerTele: this.newOrder.customerTele,
-        customerAddress: this.newOrder.customerAddress
-
+       discountPrice: this.newOrder.discountPrice,
       });
 
       //for clear after submitting
-      this.newOrder = { orderId: '', orderName: '', customername: '', customerTele: '', customerAddress: '' }
+      this.newOrder = { orderId: '', orderName:'', customername: '', customerTele: '' ,discountPrice :''}
 
     }
   }
