@@ -3,86 +3,160 @@
     <h3>Add Order Section</h3>
     <div class="form-divider-one">
       <div class="form-divider-indivder">
-        <!-- <div class="">
-          <label for="">Order Id:</label> <input  [(ngModel)]="newOrder.orderId" [ngModelOptions]="{standalone:true}" type="text" />
-        </div> -->
         <div class="">
-          <label for="">Order Name</label>
-
-           <select  name="" id=""  [(ngModel)]="newOrder.orderName" [ngModelOptions]="{standalone:true}">
-            <option value="" disabled selected>Select Order</option>
-            <option  value="Rice & Curry LKR: 350">Rice & Curry LKR: 350</option>
-            <option value="Fish Bun LKR: 50">Fish Bun LKR: 50</option>
-            <option value="Jam Bun LKR: 45">Jam Bun LKR: 45</option>
-            <option value="Sausage  Bun LKR: 100">Sausage  Bun LKR: 100</option>
-          </select> 
+          <label for="">Food Name</label>
+          <ng-select
+            name="orderName"
+            id=""
+            class="select"
+            [(ngModel)]="newOrder.orderName"
+          >
+            <ng-option value="" disabled selected>Select Order</ng-option>
+            <ng-option value="Rice & Curry ">Rice & Curry </ng-option>
+            <ng-option value="Fish Bun ">Fish Bun </ng-option>
+            <ng-option value="Jam Bun ">Jam Bun </ng-option>
+            <ng-option value="Sausage  Bun ">Sausage Bun </ng-option>
+          </ng-select>
         </div>
         <div class="">
-          <label for="">Customer Name</label>
+          <label for="">Price LKR</label>
           <input
-            [(ngModel)]="newOrder.customername"
-            [ngModelOptions]="{ standalone: true }"
+            required
+            name="price"
+            [(ngModel)]="newOrder.price"
             type="text"
           />
         </div>
         <div class="">
+          <label for="">Qty</label>
+          <input required name="qty" [(ngModel)]="newOrder.qty" type="tel" />
+        </div>
+        <!-- <div class="">
+          <label for="">Customer Name</label>
+          <input
+            name="customername"
+            [(ngModel)]="newOrder.customername"
+            type="text"
+          />
+        </div>
+
+        <div class="">
           <label for="">Customer T.P Number</label>
           <input
+            name="customerTele"
             [(ngModel)]="newOrder.customerTele"
             required
             maxlength="10"
             pattern="[0-9]{10}"
-            [ngModelOptions]="{ standalone: true }"
             type="text"
             #tp="ngModel"
           />
-        </div>
+        </div> -->
+
         <div class="">
           <label for="">Discount </label>
-
-          <select    name="" id=""  [(ngModel)]="newOrder.discountPrice" [ngModelOptions]="{standalone:true}">
-            <option value="" disabled selected>Select Discount %</option>
-            <option  value="1%">1% </option>
-            <option  value="0%">0% </option>
-            <option value="2%">2%</option>
-            <option value="5%">5%</option>
-            <option value="10%">10%</option>
-          </select> 
+          <ng-select
+            name="discountPrice"
+            class="select"
+            id=""
+            [(ngModel)]="newOrder.discountPrice"
+          >
+            <ng-option option value="" disabled selected
+              >Select Discount</ng-option
+            >
+            <ng-option value="0%">0%</ng-option>
+            <ng-option value="1%">1%</ng-option>
+            <ng-option value="2%">2%</ng-option>
+            <ng-option value="5%">5%</ng-option>
+            <ng-option value="10%">10%</ng-option>
+          </ng-select>
         </div>
+
         <button (click)="addItem()" class="enter-to-table">
-          Add to table <i class="fa fa-add"></i>
+          Add <i class="fa fa-add"></i>
         </button>
       </div>
+
       <div></div>
-      <table class="left-table" style="width: auto">
+
+      <table
+        class="left-table"
+        style="
+          border: 1px solid dodgerblue;
+          margin: 1%;
+          padding: 1%;
+          width: 1090px;
+          height: 20px;
+          text-align: center;
+        "
+      >
         <thead>
           <tr>
-            <th>Order Id</th>
-            <th>Order Name</th>
-            <th>Customer Name</th>
-            <th>Customer Number</th>
-            <th>Discount Price</th>
-            <th>Remove</th>
+            <th style="border: 1px solid dodgerblue; padding: 1%">Order Id</th>
+
+            <th style="border: 1px solid dodgerblue; padding: 1%">Food Name</th>
+            <th style="border: 1px solid dodgerblue; padding: 1%">Price LKR</th>
+            <th style="border: 1px solid dodgerblue; padding: 1%">Qty</th>
+            <!-- <th style="border: 1px solid dodgerblue; padding: 1%">
+              Customer Name
+            </th>
+            <th style="border: 1px solid dodgerblue; padding: 1%">
+              Customer Number
+            </th> -->
+            <th style="border: 1px solid dodgerblue; padding: 1%">
+              Discount Price
+            </th>
+            <th style="border: 1px solid dodgerblue; padding: 1%"></th>
           </tr>
         </thead>
+
         <tbody>
           <tr *ngFor="let item of items; let i = index">
-            <td>{{ item.orderId }}</td>
-            <td>{{ item.orderName }}</td>
-            <td>{{ item.customername }}</td>
-            <td>{{ item.customerTele }}</td>
+            <td style="border: 1px solid dodgerblue; padding: 1%">
+              {{ item.orderId }}
+            </td>
+            <td style="border: 1px solid dodgerblue; padding: 1%">
+              {{ item.orderName }}
+            </td>
+            <td style="border: 1px solid dodgerblue; padding: 1%">
+              {{ item.price }}
+            </td>
+            <td style="border: 1px solid dodgerblue; padding: 1%">
+              {{ item.qty }}
+            </td>
+            <!-- <td style="border: 1px solid dodgerblue; padding: 1%">
+              {{ item.customername }}
+            </td>
+         
+            <td style="border: 1px solid dodgerblue; padding: 1%">
+              {{ item.customerTele }}
+            </td> -->
 
-            <td>{{ item.discountPrice }}</td>
+            <td style="border: 1px solid dodgerblue; padding: 1%">
+              {{ item.discountPrice }}
+            </td>
 
-            <td>
+            <td style="border: 1px solid dodgerblue; padding: 1%">
               <button class="removr" (click)="removeItem(item.orderId)">
                 <i class="fa fa-close"></i>
               </button>
             </td>
           </tr>
+          <tr>
+            <th style="color: red">Total Price</th>
+          </tr>
         </tbody>
+        <tfoot>
+          <tr *ngFor="let item of items; let i = index">
+        
+              {{
+                item.price * item.qty | currency : "Rs. " : "symbol" : "1.2-2"
+              }}
+        
+            
+          </tr>
+        </tfoot>
       </table>
     </div>
-    <div class="second-divider"></div>
   </form>
 </div>

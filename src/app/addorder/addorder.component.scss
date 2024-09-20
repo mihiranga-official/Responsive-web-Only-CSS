@@ -17,8 +17,10 @@ h3 {
 }
 .form-divider-indivder {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   text-align: center;
+  margin: 1%;
+  padding: 1%;
   gap: 30px;
   border: 2px dotted red;
   align-items: center; /* Centers vertically */
@@ -26,27 +28,47 @@ h3 {
 }
 .enter-to-table {
   font-size: 20px;
-  margin: 11%;
-  width: 140px;
+
+  width: 100px;
+  margin-top: 20px;
   height: 30px;
   border-radius: 7px;
-  background-color: #1680d7;
+  background-color: #2d30c3;
+  color: whitesmoke;
 }
 .second-divider {
   border: 2px solid #13c788;
 }
 .removr {
   width: 100px;
-  height: 20px;
+  height: 30px;
 }
 input {
-  font-size: large;
+  font-size: 15px;
   margin: 2%;
   padding: 2%;
 }
-select {
+.select {
+width: 200px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.table-total {
+  border: 1px double black;
   margin: 2%;
-  padding: 2%;
+  padding: 1%;
+}
+.total-table .tableheader,
+
+.tablerow .tableheder,
+tbody {
+  border: 2px solid rgb(20, 146, 27);
+  align-items: end;
   font-size: large;
   font-weight: 600;
+  margin: 2%;
+  text-align: center;
+  width: 300px;
+  padding: 2%;
 }
