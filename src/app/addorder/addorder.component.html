@@ -48,14 +48,15 @@
         </thead>
         <tbody>
           <tr  *ngFor="let item of items;let i=index">
-            <td>{{i+1}}</td>
+
             
+            <td>{{item.orderId}}</td>
             <td>{{item.orderName}}</td>
             <td>{{item.customername}}</td>
             <td>{{item.customerTele}}</td>
             <td>{{item.customerAddress}}</td>
            
-    <td><button class="removr"  (click)="removeItem()"> <i class="fa fa-close"></i> </button></td> 
+    <td><button class="removr"  (click)="removeItem(item.orderId)"> <i class="fa fa-close"></i> </button></td> 
           </tr>
         </tbody>
       </table>

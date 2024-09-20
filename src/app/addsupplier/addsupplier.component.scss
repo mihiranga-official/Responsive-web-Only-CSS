@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.inform-divider{
+    margin: 1%;
+    padding: 2%;
+    display: grid;
+    grid-template-columns: repeat(5,2fr);
+    border: 2px solid red;
+}
+button{
+margin: 10%;
+
+}
