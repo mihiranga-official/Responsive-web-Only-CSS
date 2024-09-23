@@ -6,7 +6,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 @Component({
   selector: 'app-addorder',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule,NgSelectModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, NgSelectModule],
   templateUrl: './addorder.component.html',
   styleUrl: './addorder.component.scss'
 })
@@ -17,44 +17,41 @@ export class AddorderComponent {
     orderId: '',
     orderName: '',
     price: 0,
-   // customername: '',
-   // customerTele: '',
-   discountPrice: '',
-    qty:0,
-    subTotal:''
+
+    discountPrice: 0,
+    qty: 0,
+    subTotal: 0
   }
 
   items: Array<{
     orderId: string
     orderName: string,
     price: number,
-   // customername: string,
-    //customerTele: string,
-    discountPrice: string,
-    qty:number
-    subTotal:string
- 
+    discountPrice: number,
+    qty: number
+    subTotal: number
+
   }> = []
 
   addItem() {
-    if ( this.newOrder.price && this.newOrder.orderName && this.newOrder.discountPrice) {
+    if (this.newOrder.price && this.newOrder.orderName && this.newOrder.discountPrice) {
       const newId = this.items.length + 1;
 
 
       this.items.push({
         orderId: newId.toString(),
         price: this.newOrder.price,
-        qty:this.newOrder.qty,
-        subTotal:this.newOrder.subTotal,
+        qty: this.newOrder.qty,
+        subTotal: this.newOrder.subTotal,
         orderName: this.newOrder.orderName,
         //customername: this.newOrder.customername,
-       // customerTele: this.newOrder.customerTele,
+        // customerTele: this.newOrder.customerTele,
         discountPrice: this.newOrder.discountPrice,
-      
+
       });
 
       //for clear after submitting
-      this.newOrder = { orderId: '', orderName: '', price: 0,qty:0, subTotal:'',  discountPrice: '' }
+      this.newOrder = { orderId: '', orderName: '', price: 0, qty: 0, subTotal: 0, discountPrice: 0 }
 
     }
   }
@@ -64,7 +61,15 @@ export class AddorderComponent {
     this.items = this.items.filter(item => item.orderId !== id)
   }
 
-  calculateSum(){
-
+  calculateTotal() {
+    return this.items.reduce((acc, item) => acc + (item.price * item.qty), 0)
   }
+
+  // calculateDiscount() {
+  //   return this.items.reduce((tc, item) => {
+
+  //     const discountAmount = (item.price / item.discountPrice /100) ;
+  //     return tc + discountAmount;
+  //   }, 0);
+  // }
 }

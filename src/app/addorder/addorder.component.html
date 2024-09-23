@@ -3,11 +3,14 @@
     <h3>Add Order Section</h3>
     <div class="form-divider-one">
       <div class="form-divider-indivder">
+
+
         <div class="">
-          <label for="">Food Name</label>
+          <label for="">Select Food</label>
           <ng-select
             name="orderName"
             id=""
+            required
             class="select"
             [(ngModel)]="newOrder.orderName"
           >
@@ -19,7 +22,7 @@
           </ng-select>
         </div>
         <div class="">
-          <label for="">Price LKR</label>
+          <label for="">Select Price</label>
           <input
             required
             name="price"
@@ -30,133 +33,101 @@
         <div class="">
           <label for="">Qty</label>
           <input required name="qty" [(ngModel)]="newOrder.qty" type="tel" />
-        </div>
-        <!-- <div class="">
-          <label for="">Customer Name</label>
-          <input
-            name="customername"
-            [(ngModel)]="newOrder.customername"
-            type="text"
-          />
-        </div>
+        </div> 
+
 
         <div class="">
-          <label for="">Customer T.P Number</label>
-          <input
-            name="customerTele"
-            [(ngModel)]="newOrder.customerTele"
-            required
-            maxlength="10"
-            pattern="[0-9]{10}"
-            type="text"
-            #tp="ngModel"
-          />
-        </div> -->
-
-        <div class="">
-          <label for="">Discount </label>
+         <label for="">Discount </label>
           <ng-select
             name="discountPrice"
             class="select"
             id=""
+            required
             [(ngModel)]="newOrder.discountPrice"
           >
             <ng-option option value="" disabled selected
               >Select Discount</ng-option
             >
-            <ng-option value="0%">0%</ng-option>
-            <ng-option value="1%">1%</ng-option>
-            <ng-option value="2%">2%</ng-option>
-            <ng-option value="5%">5%</ng-option>
-            <ng-option value="10%">10%</ng-option>
+            <ng-option value="0">0%</ng-option>
+            <ng-option value="1">1%</ng-option>
+            <ng-option value="2">2%</ng-option>
+            <ng-option value="5">5%</ng-option>
+            <ng-option value="10">10%</ng-option>
           </ng-select>
         </div>
-
-        <button (click)="addItem()" class="enter-to-table">
-          Add <i class="fa fa-add"></i>
-        </button>
+        <div>
+          <button class="addItem" (click)="addItem()">Add </button>
+        </div>
+       
       </div>
 
+      
       <div></div>
 
       <table
         class="left-table"
-        style="
-          border: 1px solid dodgerblue;
-          margin: 1%;
-          padding: 1%;
-          width: 1090px;
-          height: 20px;
-          text-align: center;
-        "
+        style=" width: 800px"
       >
         <thead>
           <tr>
-            <th style="border: 1px solid dodgerblue; padding: 1%">Order Id</th>
+            <th style="border: 1px solid dodgerblue;  padding:2%">Order Id</th>
 
-            <th style="border: 1px solid dodgerblue; padding: 1%">Food Name</th>
-            <th style="border: 1px solid dodgerblue; padding: 1%">Price LKR</th>
-            <th style="border: 1px solid dodgerblue; padding: 1%">Qty</th>
-            <!-- <th style="border: 1px solid dodgerblue; padding: 1%">
-              Customer Name
-            </th>
-            <th style="border: 1px solid dodgerblue; padding: 1%">
-              Customer Number
-            </th> -->
-            <th style="border: 1px solid dodgerblue; padding: 1%">
+            <th style="border: 1px solid dodgerblue;  padding:2%">Food Name</th>
+            <th style="border: 1px solid dodgerblue;  padding:2%">Price LKR</th>
+            <th style="border: 1px solid dodgerblue;  ">Qty</th>
+            <th style="border: 1px solid dodgerblue;  padding:2%">
               Discount Price
             </th>
-            <th style="border: 1px solid dodgerblue; padding: 1%"></th>
+            <th style="border: 1px solid dodgerblue;  padding:2%"></th>
           </tr>
         </thead>
 
         <tbody>
           <tr *ngFor="let item of items; let i = index">
-            <td style="border: 1px solid dodgerblue; padding: 1%">
+            <td style="border: 1px solid dodgerblue;  padding:2%">
               {{ item.orderId }}
             </td>
-            <td style="border: 1px solid dodgerblue; padding: 1%">
+            <td style="border: 1px solid dodgerblue;  padding:2%">
               {{ item.orderName }}
             </td>
-            <td style="border: 1px solid dodgerblue; padding: 1%">
+            <td style="border: 1px solid dodgerblue;  padding:2%">
               {{ item.price }}
             </td>
-            <td style="border: 1px solid dodgerblue; padding: 1%">
+            <td style="border: 1px solid dodgerblue;  padding:2%">
               {{ item.qty }}
             </td>
-            <!-- <td style="border: 1px solid dodgerblue; padding: 1%">
-              {{ item.customername }}
-            </td>
-         
-            <td style="border: 1px solid dodgerblue; padding: 1%">
-              {{ item.customerTele }}
-            </td> -->
-
             <td style="border: 1px solid dodgerblue; padding: 1%">
               {{ item.discountPrice }}
             </td>
-
-            <td style="border: 1px solid dodgerblue; padding: 1%">
+            <td style="border: 1px solid dodgerblue; ">
               <button class="removr" (click)="removeItem(item.orderId)">
                 <i class="fa fa-close"></i>
               </button>
             </td>
           </tr>
-          <tr>
-            <th style="color: red">Total Price</th>
-          </tr>
+
         </tbody>
+  
         <tfoot>
-          <tr *ngFor="let item of items; let i = index">
-        
-              {{
-                item.price * item.qty | currency : "Rs. " : "symbol" : "1.2-2"
-              }}
-        
+          <!-- <tr style="color: rgb(3, 1, 1); margin-top: 20px; ">
+           
+            <th colspan="5" style= "border: 3px solid rgb(3, 163, 59); font-size: x-large; text-align: right; ; padding: 1%">
+              Total Discount:
             
-          </tr>
+              {{calculateDiscount() | currency: 'Rs. ' : 'symbol' : '1.2-2' }}
+              
+            </th>
+        
+          
+          </tr> -->
+          <tr style="color: rgb(235, 16, 16); margin-top: 20px; ">   
+             <th colspan="5"  style= "border: 3px solid rgb(3, 163, 59); font-size: x-large; text-align: right; ; padding: 1%">  Total Price:
+            {{calculateTotal() | currency: 'Rs. ' : 'symbol' : '1.2-2' }}
+            
+          </th></tr>
         </tfoot>
       </table>
     </div>
   </form>
+
 </div>
