@@ -17,10 +17,10 @@ export class AddorderComponent {
     orderId: '',
     orderName: '',
     price: 0,
-
     discountPrice: 0,
     qty: 0,
-    subTotal: 0
+    subTotal: 0,
+    disCountAmount: 0
   }
 
   items: Array<{
@@ -29,7 +29,8 @@ export class AddorderComponent {
     price: number,
     discountPrice: number,
     qty: number
-    subTotal: number
+    subTotal: number,
+    disCountAmount: number
 
   }> = []
 
@@ -44,14 +45,12 @@ export class AddorderComponent {
         qty: this.newOrder.qty,
         subTotal: this.newOrder.subTotal,
         orderName: this.newOrder.orderName,
-        //customername: this.newOrder.customername,
-        // customerTele: this.newOrder.customerTele,
         discountPrice: this.newOrder.discountPrice,
-
+        disCountAmount: this.newOrder.disCountAmount
       });
 
       //for clear after submitting
-      this.newOrder = { orderId: '', orderName: '', price: 0, qty: 0, subTotal: 0, discountPrice: 0 }
+      this.newOrder = { orderId: '', orderName: '', price: 0, qty: 0, subTotal: 0, discountPrice: 0, disCountAmount: 0 }
 
     }
   }
@@ -65,11 +64,18 @@ export class AddorderComponent {
     return this.items.reduce((acc, item) => acc + (item.price * item.qty), 0)
   }
 
-  // calculateDiscount() {
-  //   return this.items.reduce((tc, item) => {
+  calculateDiscount() {
+    return this.items.reduce((tc, item) => {
 
-  //     const discountAmount = (item.price / item.discountPrice /100) ;
-  //     return tc + discountAmount;
-  //   }, 0);
-  // }
+      const disCountAmount = (item.price * item.discountPrice / 100);
+      return tc + disCountAmount;
+    }, 0);
+  }
+
+  totalPrice() {
+    return this.items.reduce((tot, item) => {
+      const totalPrices = (item.price - this.calculateDiscount());
+      return tot + totalPrices
+    }, 0)
+  }
 }

@@ -76,7 +76,7 @@
             <th style="border: 1px solid dodgerblue;  padding:2%">Price LKR</th>
             <th style="border: 1px solid dodgerblue;  ">Qty</th>
             <th style="border: 1px solid dodgerblue;  padding:2%">
-              Discount Price
+              Discount Presentage
             </th>
             <th style="border: 1px solid dodgerblue;  padding:2%"></th>
           </tr>
@@ -109,7 +109,13 @@
         </tbody>
   
         <tfoot>
-          <!-- <tr style="color: rgb(3, 1, 1); margin-top: 20px; ">
+ 
+          <tr style="color: rgb(235, 16, 16); margin-top: 20px; ">   
+             <th colspan="5"  style= "border: 3px solid rgb(3, 163, 59); font-size: x-large; text-align: right; ; padding: 1%">  Total Price:
+            {{calculateTotal() | currency: 'Rs. ' : 'symbol' : '1.2-2' }}
+            
+          </th>
+          <tr style="color: rgb(3, 1, 1); margin-top: 20px; ">
            
             <th colspan="5" style= "border: 3px solid rgb(3, 163, 59); font-size: x-large; text-align: right; ; padding: 1%">
               Total Discount:
@@ -119,12 +125,13 @@
             </th>
         
           
-          </tr> -->
-          <tr style="color: rgb(235, 16, 16); margin-top: 20px; ">   
-             <th colspan="5"  style= "border: 3px solid rgb(3, 163, 59); font-size: x-large; text-align: right; ; padding: 1%">  Total Price:
-            {{calculateTotal() | currency: 'Rs. ' : 'symbol' : '1.2-2' }}
-            
-          </th></tr>
+          </tr>
+          <tr class="border-fortotal" style="color: rgba(255, 20, 20, 0.842); margin-top: 20px; ">   
+            <th colspan="5"  style=  "border: 3px solid  rgb(7, 130, 201); font-size: x-large; text-align: right; ; padding: 1% ; ">  Total Price After Discount:
+           {{totalPrice() | currency: 'Rs. ' : 'symbol' : '1.2-2' }}
+           
+         </th>
+        </tr>
         </tfoot>
       </table>
     </div>
