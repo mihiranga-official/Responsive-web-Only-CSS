@@ -6,10 +6,9 @@ body {
   border: 3px solid #7360df;
   margin: 1%;
   padding: 1%;
-}
-h3 {
   text-align: center;
 }
+
 .form-divider-one {
   border: 2px solid #9b1094;
   margin: 1%;
@@ -83,6 +82,7 @@ tbody {
   padding: 2%;
 
 
+
 }
 .btn-grp-one{
 background-color: #FF9500;
@@ -99,4 +99,21 @@ border-radius: 30px;
   max-width: 450px;
 
   
+}
+.recent-orders{
+ 
+
+  border: 2px solid gray;
+  text-align: center;
+
+}
+.card-order{
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  margin: 1%;
+  padding: 1%;
+  gap: 10px;
+}
+.card{
+  border: 2px solid greenyellow;
 }
