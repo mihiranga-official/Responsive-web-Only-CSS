@@ -1,5 +1,5 @@
 <div class="main-divider">
-  <form action="" class="form-divider">
+  <form  action="" class="form-divider">
     <h1>Add Order Section</h1>
     <div class="form-divider-one">
       <div class="form-divider-indivder">
@@ -52,7 +52,7 @@
             <ng-option value="1">1%</ng-option>
             <ng-option value="2">2%</ng-option>
             <ng-option value="5">5%</ng-option>
-            <ng-option value="10">10%</ng-option>
+            <ng-option value="100">100%</ng-option>
           </ng-select>
         </div>
         <div>
@@ -65,7 +65,6 @@
       <div></div>
       <!-- <div class="calculator-class">
 
- <label class="display-area-calcualtor" for=""></label>
          <div >
           <button class="btn-grp-one" >1</button>
           <button class="btn-grp-one"> 2</button>
@@ -95,7 +94,7 @@
             <button class="btn-grp-one">X</button>
             <button class="btn-grp-one">=</button>
           </div>
-      </div> -->
+      </div>  -->
       <table
         class="left-table"
         style=" width: 800px"
@@ -129,7 +128,7 @@
               {{ item.qty }}
             </td>
             <td style="border: 1px solid dodgerblue; padding: 1%">
-              {{ item.discountPrice }}
+              {{ item.discountPrice  }}
             </td>
             <td style="border: 1px solid dodgerblue; ">
               <button class="removr" (click)="removeItem(item.orderId)">
@@ -172,33 +171,31 @@
     <div class="recent-orders">
       <h1 >Recently Adedd Orders</h1>
       <div class="card-order">
-        <div class="card">
-          <img src="" alt="" style="width: 100px;">
-          <h1 class="food-name">Food Name</h1>
-          <p class="price"></p>
-          <p> Some Text About for Food Name</p>
-          <p><button>Add to Cart</button></p>
+        <div class="card"  (click)="addItemFromCard('kotthu',850,1,0)">
+          <img class="image-class"   src="" alt="" style=" margin: 2%; padding: 2%;">
+          <h1 class="food-name">Kotthu</h1>
+          <h2> </h2>
+
         </div>
-        <div class="card">
-          <img src="" alt="" style="width: 100px;">
-          <h1 class="food-name">Food Name</h1>
-          <p class="price"></p>
-          <p> Some Text About for Food Name</p>
-          <p><button>Add to Cart</button></p>
+        <div class="card" (click)="addItemFromCard('Egg Roti',100,1,0)">
+         <img class="image-class"  src="" alt="" style=" margin: 2%; padding: 2%;">
+          <h1 class="food-name">Egg Roti</h1>
+
+          <h2> Price LKR 100</h2>
+       
         </div>
-        <div class="card">
-          <img src="" alt="" style="width: 100px;">
-          <h1 class="food-name">Food Name</h1>
-          <p class="price"></p>
-          <p> Some Text About for Food Name</p>
-          <p><button>Add to Cart</button></p>
+        <div class="card" (click)="addItemFromCard('Dosa',80,1,0)">
+         <img class="image-class"  src="" alt="" style=" margin: 2%; padding: 2%;">
+          <h1 class="food-name">Masala Dosa</h1>
+          <h2> Price LKR 80</h2>
+       
         </div>
-        <div class="card">
-          <img src="" alt="" style="width: 100px;">
-          <h1 class="food-name">Food Name</h1>
-          <p class="price"></p>
-          <p> Some Text About for Food Name</p>
-          <p><button>Add to Cart</button></p>
+        <div class="card" (click)="addItemFromCard('Rolls',80,1,0)">
+         <img class="image-class"  src="" alt="" style=" margin: 2%; padding: 2%;">
+          <h1 class="food-name">Rolls</h1>
+
+          <h2> Price LKR 75</h2>
+       
         </div>
       </div>
       

@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -20,7 +21,8 @@ export class AddorderComponent {
     discountPrice: 0,
     qty: 0,
     subTotal: 0,
-    disCountAmount: 0
+    disCountAmount: 0,
+
   }
 
   items: Array<{
@@ -30,15 +32,13 @@ export class AddorderComponent {
     discountPrice: number,
     qty: number
     subTotal: number,
-    disCountAmount: number
+    disCountAmount: number,
 
   }> = []
 
   addItem() {
-    if (this.newOrder.price && this.newOrder.orderName && this.newOrder.discountPrice) {
+    if (this.newOrder.price && this.newOrder.orderName && this.newOrder.discountPrice ) {
       const newId = this.items.length + 1;
-
-
       this.items.push({
         orderId: newId.toString(),
         price: this.newOrder.price,
@@ -46,14 +46,36 @@ export class AddorderComponent {
         subTotal: this.newOrder.subTotal,
         orderName: this.newOrder.orderName,
         discountPrice: this.newOrder.discountPrice,
-        disCountAmount: this.newOrder.disCountAmount
-      });
+        disCountAmount: this.newOrder.disCountAmount,
 
-      //for clear after submitting
-      this.newOrder = { orderId: '', orderName: '', price: 0, qty: 0, subTotal: 0, discountPrice: 0, disCountAmount: 0 }
+
+      });
+   
+      //form clear after submitting
+      this.newOrder = { orderId: '', orderName: '', price: 0, qty: 0, subTotal: 0, discountPrice: 0, disCountAmount: 0}
 
     }
   }
+
+
+
+ addItemFromCard(orderName: string, price: number, qty: number, discountPrice: number) {
+  const newId = this.items.length + 1;
+  const subTotal = price * qty; 
+  const disCountAmount = (subTotal * discountPrice) / 100; 
+
+  this.items.push({
+    orderId: newId.toString(),
+    orderName: orderName,
+    price: price,
+    qty: qty,
+    discountPrice: discountPrice,
+    subTotal: subTotal,
+    disCountAmount: disCountAmount,
+  });
+}
+
+
 
   //when click remoove button in the row 
   removeItem(id: string) {
