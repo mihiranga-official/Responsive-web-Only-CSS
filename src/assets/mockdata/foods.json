@@ -1,0 +1,24 @@
+[
+      {
+        "foodName": "Kotthu",
+        "image": "assets/images/kotthu.jpg",
+        "priced": "Price LKR 850"
+      },
+      {
+        "foodName": "Egg Roti",
+        "image": "assets/images/eggroti.jpg",
+        "priced": "Price LKR 100"
+      },
+      {
+        "foodName": "Masala Dosa",
+        "image": "assets/images/dosa.jpg",
+        "priced": "Price LKR 80"
+      },
+      {
+        "foodName": "Rolls",
+        "image": "assets/images/rolls.jpeg",
+        "priced": "Price LKR 75"
+      }
+    ]
+
+  

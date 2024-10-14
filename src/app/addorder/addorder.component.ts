@@ -1,17 +1,39 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AddOrderService } from './add-order.service';
 
 @Component({
   selector: 'app-addorder',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, NgSelectModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, NgSelectModule,HttpClientModule],
   templateUrl: './addorder.component.html',
   styleUrl: './addorder.component.scss'
 })
-export class AddorderComponent {
+export class AddorderComponent implements OnInit {
+ 
+  
+
+
+
+ sharps: any[] = [];
+
+  constructor(private logs: AddOrderService) {}
+
+  ngOnInit(): void {
+    this.logs.getAllOrderCompData().subscribe({
+      next: res => {
+        this.sharps = res;
+        console.log("AbS", this.sharps);
+      },
+      error: err => console.log(err)
+    });
+  }
+
+
+
 
 
   newOrder = {
@@ -35,6 +57,9 @@ export class AddorderComponent {
     disCountAmount: number,
 
   }> = []
+
+ 
+ 
 
   addItem() {
     if (this.newOrder.price && this.newOrder.orderName && this.newOrder.discountPrice ) {
@@ -90,7 +115,7 @@ export class AddorderComponent {
     return this.items.reduce((tc, item) => {
 
       const disCountAmount = (item.price * item.discountPrice / 100);
-      return tc + disCountAmount;
+      return tc + disCountAmount *item.qty;
     }, 0);
   }
 

@@ -170,33 +170,15 @@
 
     <div class="recent-orders">
       <h1 >Recently Adedd Orders</h1>
-      <div class="card-order">
-        <div class="card"  (click)="addItemFromCard('kotthu',850,1,0)">
-          <img class="image-class"   src="" alt="" style=" margin: 2%; padding: 2%;">
-          <h1 class="food-name">Kotthu</h1>
-          <h2> </h2>
+      <div class="card-order"  >
+        <div class="card" *ngFor="let item of sharps"  (click)="addItemFromCard(item.foodName,item.priced,1,0)">
+          <img class="image-class" [src]="item.image"  alt="" style=" margin: 2%; padding: 2%;">
+          <h1 class="food-name">{{item.foodName}}</h1>
+          <h2> {{item.priced}}</h2>
+          <label ></label>
 
         </div>
-        <div class="card" (click)="addItemFromCard('Egg Roti',100,1,0)">
-         <img class="image-class"  src="" alt="" style=" margin: 2%; padding: 2%;">
-          <h1 class="food-name">Egg Roti</h1>
-
-          <h2> Price LKR 100</h2>
-       
-        </div>
-        <div class="card" (click)="addItemFromCard('Dosa',80,1,0)">
-         <img class="image-class"  src="" alt="" style=" margin: 2%; padding: 2%;">
-          <h1 class="food-name">Masala Dosa</h1>
-          <h2> Price LKR 80</h2>
-       
-        </div>
-        <div class="card" (click)="addItemFromCard('Rolls',80,1,0)">
-         <img class="image-class"  src="" alt="" style=" margin: 2%; padding: 2%;">
-          <h1 class="food-name">Rolls</h1>
-
-          <h2> Price LKR 75</h2>
-       
-        </div>
+  
       </div>
       
     </div>
