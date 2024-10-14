@@ -13,7 +13,7 @@ export class AddOrderService {
 
   getAllOrderCompData(): Observable<any[]> {
     return this.http.get<any[]>(this.getting).pipe(
-      tap(dataSets => console.log("JanithNew", dataSets))
+      tap(dataSets => console.log("Janith New", dataSets))
     );
   }
 }

@@ -115,7 +115,7 @@ export class AddorderComponent implements OnInit {
     return this.items.reduce((tc, item) => {
 
       const disCountAmount = (item.price * item.discountPrice / 100);
-      return tc + disCountAmount *item.qty;
+      return tc + disCountAmount  *item.qty;
     }, 0);
   }
 

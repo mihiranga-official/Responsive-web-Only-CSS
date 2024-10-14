@@ -1,6 +1,6 @@
 <div class="main-divider">
   <form  action="" class="form-divider">
-    <h1>Add Order Section</h1>
+    <h2>Add Order Section</h2>
     <div class="form-divider-one">
       <div class="form-divider-indivder">
 
@@ -15,10 +15,11 @@
             [(ngModel)]="newOrder.orderName"
           >
             <ng-option value="" disabled selected>Select Order</ng-option>
-            <ng-option value="Rice & Curry ">Rice & Curry </ng-option>
+            <ng-option  *ngFor="let sample of sharps " [value]="sample.name">{{sample.name}}</ng-option>
+            <!-- <ng-option value="Rice & Curry ">Rice & Curry </ng-option>
             <ng-option value="Fish Bun ">Fish Bun </ng-option>
             <ng-option value="Jam Bun ">Jam Bun </ng-option>
-            <ng-option value="Sausage  Bun ">Sausage Bun </ng-option>
+            <ng-option value="Sausage  Bun ">Sausage Bun </ng-option> -->
           </ng-select>
         </div>
         <div class="">
@@ -62,39 +63,7 @@
       </div>
 
       
-      <div></div>
-      <!-- <div class="calculator-class">
 
-         <div >
-          <button class="btn-grp-one" >1</button>
-          <button class="btn-grp-one"> 2</button>
-          <button class="btn-grp-one"> 3</button>
-         </div>
-      
-         
-          <div class="btn-grp-two">
-            <button class="btn-grp-one">4</button>
-            <button class="btn-grp-one">5</button>
-            <button class="btn-grp-one">6</button>
-          </div>
-
-          <div class="btn-grp-three">
-            <button class="btn-grp-one">8</button>
-            <button class="btn-grp-one">9</button>
-            <button class="btn-grp-one">0</button>
-          </div>
-
-          <div class="btn-grp-four">
-            <button class="btn-grp-one">+</button>
-            <button class="btn-grp-one">-</button>
-            <button class="btn-grp-one">.</button>
-          </div>
-            <div class="btn-grp-four">
-            <button class="btn-grp-one">/</button>
-            <button class="btn-grp-one">X</button>
-            <button class="btn-grp-one">=</button>
-          </div>
-      </div>  -->
       <table
         class="left-table"
         style=" width: 800px"
@@ -169,18 +138,15 @@
     </div>
 
     <div class="recent-orders">
-      <h1 >Recently Adedd Orders</h1>
+      <h2 >Recently Adedd Orders</h2>
       <div class="card-order"  >
         <div class="card" *ngFor="let item of sharps"  (click)="addItemFromCard(item.foodName,item.priced,1,0)">
           <img class="image-class" [src]="item.image"  alt="" style=" margin: 2%; padding: 2%;">
-          <h1 class="food-name">{{item.foodName}}</h1>
-          <h2> {{item.priced}}</h2>
-          <label ></label>
-
+          <h3 >{{item.foodName}}</h3>        
+          <h3 > {{item.priced}}</h3> 
+          <label for=""></label>   
         </div>
-  
       </div>
-      
     </div>
   </form>
 

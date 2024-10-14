@@ -97,31 +97,36 @@ tbody {
 .recent-orders {
   border: 2px solid gray;
   text-align: center;
+  margin: 2%;
+  padding: 2%;
 }
 .card-order {
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr;
-  margin: 1%;
-  padding: 1%;
-  gap: 10px;
+  grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
 }
 .card {
   border: 2px solid greenyellow;
+  
 }
 .card-order {
   cursor: pointer;
 }
 .card {
-  border: 2px solid gray;
-  margin: 1%;
+  border: 4px solid #8f6ce7;
+  margin: 3%;
   padding: 1%;
+  max-width: 170px;
+  max-height: 170px;
+  margin-bottom:10px;
+
+  
+
 }
 
 .image-class {
   border: 3px solid gray;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   margin: 2%;
   padding: 2%;
-  margin-bottom: 20px;
 }
