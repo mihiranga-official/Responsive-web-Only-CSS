@@ -1,11 +1,13 @@
 <div class="main-divider">
   <form  action="" class="form-divider">
-    <h2>Add Order Section</h2>
+   
     <div class="form-divider-one">
+      <h2>Add Order Section</h2>
       <div class="form-divider-indivder">
-
+      
 
         <div class="">
+          
           <label for="">Select Food</label>
           <ng-select
             name="orderName"
@@ -15,11 +17,7 @@
             [(ngModel)]="newOrder.orderName"
           >
             <ng-option value="" disabled selected>Select Order</ng-option>
-            <ng-option  *ngFor="let sample of sharps " [value]="sample.name">{{sample.name}}</ng-option>
-            <!-- <ng-option value="Rice & Curry ">Rice & Curry </ng-option>
-            <ng-option value="Fish Bun ">Fish Bun </ng-option>
-            <ng-option value="Jam Bun ">Jam Bun </ng-option>
-            <ng-option value="Sausage  Bun ">Sausage Bun </ng-option> -->
+            <ng-option  *ngFor="let sample of sets " [value]="sample.foodName">{{sample.foodName}}</ng-option>
           </ng-select>
         </div>
         <div class="">
@@ -37,7 +35,7 @@
         </div> 
 
 
-        <div class="">
+        <!-- <div class="">
          <label for="">Discount </label>
           <ng-select
             name="discountPrice"
@@ -53,8 +51,19 @@
             <ng-option value="1">1%</ng-option>
             <ng-option value="2">2%</ng-option>
             <ng-option value="5">5%</ng-option>
-            <ng-option value="100">100%</ng-option>
+           
           </ng-select>
+        </div> -->
+
+        <div class="">
+          <label for="">Add Discount Manual</label>
+          <input
+            required
+            class="select"
+            name="discountPrice"
+            [(ngModel)]="newOrder.discountPrice"
+            type="text"
+          />
         </div>
         <div>
           <button class="addItem" (click)="addItem()">Add </button>
@@ -138,9 +147,9 @@
     </div>
 
     <div class="recent-orders">
-      <h2 >Recently Adedd Orders</h2>
+      <h2 style="border: 2px solid black; ">Recently Adedd Orders</h2>
       <div class="card-order"  >
-        <div class="card" *ngFor="let item of sharps"  (click)="addItemFromCard(item.foodName,item.priced,1,0)">
+        <div class="card" *ngFor="let item of sharps"  (click)="addItemFromCard(item.foodName,item.realPrice,1,0)">
           <img class="image-class" [src]="item.image"  alt="" style=" margin: 2%; padding: 2%;">
           <h3 >{{item.foodName}}</h3>        
           <h3 > {{item.priced}}</h3> 

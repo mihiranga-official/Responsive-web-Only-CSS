@@ -4,23 +4,21 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AddOrderService } from './add-order.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-addorder',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, NgSelectModule,HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, NgSelectModule, HttpClientModule],
   templateUrl: './addorder.component.html',
   styleUrl: './addorder.component.scss'
 })
 export class AddorderComponent implements OnInit {
- 
-  
 
+  sharps: any[] = [];
+  sets: any[] = []
 
-
- sharps: any[] = [];
-
-  constructor(private logs: AddOrderService) {}
+  constructor(private logs: AddOrderService) { }
 
   ngOnInit(): void {
     this.logs.getAllOrderCompData().subscribe({
@@ -30,18 +28,22 @@ export class AddorderComponent implements OnInit {
       },
       error: err => console.log(err)
     });
+
+    this.logs.gettAllFoodName().subscribe({
+      next: res => {
+        this.sets = res;
+        console.log("sets", this.sets)
+      },
+      error: err => console.log(err)
+    })
   }
-
-
-
-
 
   newOrder = {
     orderId: '',
     orderName: '',
     price: 0,
     discountPrice: 0,
-    qty: 0,
+    qty: 1,
     subTotal: 0,
     disCountAmount: 0,
 
@@ -58,11 +60,9 @@ export class AddorderComponent implements OnInit {
 
   }> = []
 
- 
- 
 
   addItem() {
-    if (this.newOrder.price && this.newOrder.orderName && this.newOrder.discountPrice ) {
+    if (this.newOrder.price && this.newOrder.orderName && this.newOrder.discountPrice) {
       const newId = this.items.length + 1;
       this.items.push({
         orderId: newId.toString(),
@@ -75,30 +75,30 @@ export class AddorderComponent implements OnInit {
 
 
       });
-   
+
       //form clear after submitting
-      this.newOrder = { orderId: '', orderName: '', price: 0, qty: 0, subTotal: 0, discountPrice: 0, disCountAmount: 0}
+      this.newOrder = { orderId: '', orderName: '', price: 0, qty: 0, subTotal: 0, discountPrice: 0, disCountAmount: 0 }
 
     }
   }
 
 
 
- addItemFromCard(orderName: string, price: number, qty: number, discountPrice: number) {
-  const newId = this.items.length + 1;
-  const subTotal = price * qty; 
-  const disCountAmount = (subTotal * discountPrice) / 100; 
+addItemFromCard(orderName: string, price: number, qty: number, discountPrice: number) {
+    const newId = this.items.length + 1;
+    const subTotal = price * qty;
+    const disCountAmount = (subTotal * discountPrice) / 100;
 
-  this.items.push({
-    orderId: newId.toString(),
-    orderName: orderName,
-    price: price,
-    qty: qty,
-    discountPrice: discountPrice,
-    subTotal: subTotal,
-    disCountAmount: disCountAmount,
-  });
-}
+    this.items.push({
+      orderId: newId.toString(),
+      orderName: orderName,
+      price: price,
+      qty: qty,
+      discountPrice: discountPrice,
+      subTotal: subTotal,
+      disCountAmount: disCountAmount,
+    });
+  }
 
 
 
@@ -115,7 +115,7 @@ export class AddorderComponent implements OnInit {
     return this.items.reduce((tc, item) => {
 
       const disCountAmount = (item.price * item.discountPrice / 100);
-      return tc + disCountAmount  *item.qty;
+      return tc + disCountAmount 
     }, 0);
   }
 

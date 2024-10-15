@@ -1,0 +1,34 @@
+[
+    {
+        "foodName":"Fish Bun",
+        "selectPrice":100
+    },
+    {
+        "foodName":"Jam Bun",
+        "selectPrice":50
+    },
+    {
+        "foodName":" Cheese Roti",
+        "selectPrice":240
+    },
+    {
+        "foodName":"Jam Bun",
+        "selectPrice":35
+    },
+    {
+        "foodName":"Patties",
+        "selectPrice":60
+    },
+    {
+        "foodName":"String Hoppers (Indi Appa)",
+        "selectPrice":50
+    },
+    {
+        "foodName":"Chicken Burger",
+        "selectPrice":200
+    },
+    {
+        "foodName":"Hot Dog",
+        "selectPrice":250
+    }
+]

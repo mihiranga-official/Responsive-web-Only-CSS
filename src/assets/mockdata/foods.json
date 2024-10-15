@@ -1,46 +1,52 @@
 [
-      {
-        "foodName": "Kotthu",
-        "image": "assets/images/kotthu.jpg",
-        "priced": "Price LKR : 850"
-      },
-      {
-        "foodName": "Egg Roti",
-        "image": "assets/images/eggroti.jpg",
-        "priced": "Price LKR : 100"
-      },
-      {
-        "foodName": "Masala Dosa",
-        "image": "assets/images/dosa.jpg",
-        "priced": "Price LKR : 80"
-      },
-      {
-        "foodName": "Rolls",
-        "image": "assets/images/rolls.jpeg",
-        "priced": "Price LKR : 750"
-      }, 
-
-       {
-        "foodName": "Kotthu",
-        "image": "assets/images/kotthu.jpg",
-        "priced": "Price LKR : 850"
-      },
-      {
-        "foodName": "Egg Roti",
-        "image": "assets/images/eggroti.jpg",
-        "priced": "Price LKR : 100"
-      },
-      {
-        "foodName": "Masala Dosa",
-        "image": "assets/images/dosa.jpg",
-        "priced": "Price LKR : 80"
-      },
-      {
-        "foodName": "Rolls",
-        "image": "assets/images/rolls.jpeg",
-        "priced": "Price LKR : 750"
-      }
-    
-    ]
-
+  {
+    "foodName": "Kotthu",
+    "image": "assets/images/kotthu.jpg",
+    "priced": "Price LKR : 850",
+    "realPrice": 850
+  },
+  {
+    "foodName": "Egg Roti",
+    "image": "assets/images/eggroti.jpg",
+    "priced": "Price LKR : 100",
+    "realPrice": 100
+  },
+  {
+    "foodName": "Masala Dosa",
+    "image": "assets/images/dosa.jpg",
+    "priced": "Price LKR : 80",
+    "realPrice": 80
+  },
+  {
+    "foodName": "Rolls",
+    "image": "assets/images/rolls.jpeg",
+    "priced": "Price LKR : 750",
+    "realPrice": 750
+  },
+  {
+    "foodName": "Kotthu",
+    "image": "assets/images/kotthu.jpg",
+    "priced": "Price LKR : 850",
+    "realPrice": 850
+  },
+  {
+    "foodName": "Egg Roti",
+    "image": "assets/images/eggroti.jpg",
+    "priced": "Price LKR : 100",
+    "realPrice": 100
+  },
+  {
+    "foodName": "Masala Dosa",
+    "image": "assets/images/dosa.jpg",
+    "priced": "Price LKR : 80",
+    "realPrice": 80
+  },
+  {
+    "foodName": "Rolls",
+    "image": "assets/images/rolls.jpeg",
+    "priced": "Price LKR : 750",
+    "realPrice": 750
+  }
   
+
+]

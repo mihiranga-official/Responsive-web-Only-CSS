@@ -6,21 +6,20 @@ body {
   border: 3px solid #7360df;
   margin: 1%;
   padding: 1%;
-  text-align: center;
+
 }
 
 .form-divider-one {
   border: 2px solid #9b1094;
   margin: 1%;
   padding: 1%;
+  
 }
 .form-divider-indivder {
   display: grid;
   margin: 1%;
-
   grid-template-columns: repeat(6, 1fr);
   padding: 1%;
-
   border: 3px solid rgb(255, 123, 0);
 }
 .enter-to-table {
@@ -40,8 +39,8 @@ body {
 
 input {
   font-size: 15px;
-  margin: 2%;
-  padding: 2%;
+  margin: 1%;
+  padding: 1%;
 }
 .select {
   width: 200px;
@@ -99,6 +98,7 @@ tbody {
   text-align: center;
   margin: 2%;
   padding: 2%;
+  text-align: center;
 }
 .card-order {
   display: grid;
@@ -106,7 +106,6 @@ tbody {
 }
 .card {
   border: 2px solid greenyellow;
-  
 }
 .card-order {
   cursor: pointer;
@@ -117,10 +116,7 @@ tbody {
   padding: 1%;
   max-width: 170px;
   max-height: 170px;
-  margin-bottom:10px;
-
-  
-
+  margin-bottom: 10px;
 }
 
 .image-class {
@@ -129,4 +125,7 @@ tbody {
   height: 40%;
   margin: 2%;
   padding: 2%;
+}
+h2 {
+  text-align: center;
 }
