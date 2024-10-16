@@ -36,16 +36,16 @@ test
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{{this.addSuppliers.value.supplierName|json}}</td>
-            <td>{{this.addSuppliers.value.supplierCompany|json}}</td>
-            <td>{{this.addSuppliers.value.supplierContact |json}}</td>
-            <td>{{this.addSuppliers.value.supplierArea|json}}</td>
+          <tr *ngFor="let supplier of suppliers$ |async">
+            <td>{{supplier.supplierName}}</td>
+            <td>{{supplier.supplierCompany}}</td>
+            <td>{{supplier.supplierContact }}</td>
+            <td>{{supplier.supplierArea}}</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <!-- {{this.addSuppliers.value | json}} -->
+    
   </form>
   
  
