@@ -43,14 +43,14 @@
       <table>
         <thead>
           <tr>
-            <th style="border: 1px solid dodgerblue;">Supplier Name</th>
-            <th style="border: 1px solid dodgerblue;">Supplier Company</th>
-            <th style="border: 1px solid dodgerblue;">Supplier Contact NO</th>
-            <th style="border: 1px solid dodgerblue;">Supplier Area</th>
+            <th>Supplier Name</th>
+            <th>Supplier Company</th>
+            <th>Supplier Contact NO</th>
+            <th>Supplier Area</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let supplier of suppliers$ | async">
+          <tr *ngFor="let supplier of supplierList">
             <td>{{ supplier.supplierName }}</td>
             <td>{{ supplier.supplierCompany }}</td>
             <td>{{ supplier.supplierContact }}</td>
