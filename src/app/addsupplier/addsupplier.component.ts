@@ -5,6 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Database, ref, set, push, getDatabase, onValue } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { remove } from 'firebase/database';
 
 @Component({
   selector: 'app-addsupplier',
@@ -56,13 +57,29 @@ export class AddsupplierComponent implements OnInit {
       }
     }
   }
-  removeSupplier(id: string) {
-    this.supplierList = this.supplierList.filter(supplier => supplier.supplierName !== id)
-  }
+  // removeSupplier(id: string) {
+  //   this.supplierList = this.supplierList.filter(supplier => supplier.supplierName !== id)
+  // }
 
 //   async removeSupplier() {
 //     if (this.suppliers$.valid) {
 // const 
 //     }
 //   }
+
+async removeSupplier() {
+  if (this.addSuppliers.valid) {
+    const supplierData = this.addSuppliers.value;
+    try {
+      const db = getDatabase();
+      const supplierRef = ref(db, 'suppliers');
+      const newSupplierRef = remove(supplierRef);
+      //await set(newSupplierRef, supplierData);
+      console.log('Supplier added successfully:', supplierData);
+      this.addSuppliers.reset();
+    } catch (error) {
+      console.error('Error adding supplier:', error);
+    }
+  }
+}
 }
