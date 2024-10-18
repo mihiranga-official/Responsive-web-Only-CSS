@@ -56,4 +56,13 @@ export class AddsupplierComponent implements OnInit {
       }
     }
   }
+  removeSupplier(id: string) {
+    this.supplierList = this.supplierList.filter(supplier => supplier.supplierName !== id)
+  }
+
+//   async removeSupplier() {
+//     if (this.suppliers$.valid) {
+// const 
+//     }
+//   }
 }

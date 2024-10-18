@@ -5,7 +5,7 @@
         <label for="supplierName">Enter Supplier Name:</label>
         <input formControlName="supplierName" type="text" id="supplierName" />
         <div *ngIf="addSuppliers.get('supplierName')?.invalid && (addSuppliers.get('supplierName')?.dirty || addSuppliers.get('supplierName')?.touched)">
-          <small class="error">Supplier Name is required.</small>
+          <small style="color: red;" class="error">*Supplier Name is required.</small>
         </div>
       </div>
 
@@ -13,7 +13,7 @@
         <label for="supplierCompany">Enter Supplier Company:</label>
         <input formControlName="supplierCompany" type="text" id="supplierCompany" />
         <div *ngIf="addSuppliers.get('supplierCompany')?.invalid && (addSuppliers.get('supplierCompany')?.dirty || addSuppliers.get('supplierCompany')?.touched)">
-          <small class="error">Supplier Company is required.</small>
+          <small style="color: red;" class="error">*Supplier Company is required.</small>
         </div>
       </div>
 
@@ -21,7 +21,7 @@
         <label for="supplierContact">Enter Supplier Contact NO:</label>
         <input formControlName="supplierContact" type="text" id="supplierContact" />
         <div *ngIf="addSuppliers.get('supplierContact')?.invalid && (addSuppliers.get('supplierContact')?.dirty || addSuppliers.get('supplierContact')?.touched)">
-          <small class="error">Supplier Contact is required.</small>
+          <small style="color: red;" class="error">*Supplier Contact is required.</small>
         </div>
       </div>
 
@@ -29,7 +29,7 @@
         <label for="supplierArea">Enter Supplier Area:</label>
         <input formControlName="supplierArea" type="text" id="supplierArea" />
         <div *ngIf="addSuppliers.get('supplierArea')?.invalid && (addSuppliers.get('supplierArea')?.dirty || addSuppliers.get('supplierArea')?.touched)">
-          <small class="error">Supplier Area is required.</small>
+          <small style="color: red;" class="error">*Supplier Area is required.</small>
         </div>
       </div>
 
@@ -43,18 +43,20 @@
       <table>
         <thead>
           <tr>
-            <th>Supplier Name</th>
-            <th>Supplier Company</th>
-            <th>Supplier Contact NO</th>
-            <th>Supplier Area</th>
+            <th style="border: 1px solid dodgerblue;">Supplier Name</th>
+            <th style="border: 1px solid dodgerblue;">Supplier Company</th>
+            <th style="border: 1px solid dodgerblue;">Supplier Contact NO</th>
+            <th style="border: 1px solid dodgerblue;">Supplier Area</th>
+            <th style="border: 1px solid dodgerblue;"></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let supplier of supplierList">
-            <td>{{ supplier.supplierName }}</td>
-            <td>{{ supplier.supplierCompany }}</td>
-            <td>{{ supplier.supplierContact }}</td>
-            <td>{{ supplier.supplierArea }}</td>
+            <td style="border: 1px solid dodgerblue;">{{ supplier.supplierName }}</td>
+            <td style="border: 1px solid dodgerblue;">{{ supplier.supplierCompany }}</td>
+            <td style="border: 1px solid dodgerblue;">{{ supplier.supplierContact }}</td>
+            <td style="border: 1px solid dodgerblue;">{{ supplier.supplierArea }}</td>
+            <td><button (click)="removeSupplier(supplier.supplierName)">X</button></td>
           </tr>
         </tbody>
       </table>
