@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { collectionData, Firestore } from '@angular/fire/firestore';
+import { collectionData } from '@angular/fire/firestore';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { addDoc, collection } from 'firebase/firestore';
+
 import { Observable } from 'rxjs';
+import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-addsupplier',
@@ -37,27 +38,19 @@ export class AddsupplierComponent implements OnInit {
     })
   }
   onSubmit() {
-    console.log();
-    console.log();
-    console.log();
-    console.log();
+    this.addSupplier();
 
   }
   
   async addSupplier() {
     if (this.addSuppliers.valid) {
-      
       const supplierData = this.addSuppliers.value;
-      
       try {
         await addDoc(collection(this.firestore, 'suppliers'), supplierData);
-        console.log("HIIIII",supplierData);
+        console.log("Supplier added successfully:", supplierData);
         this.addSuppliers.reset();
-        
-      }
-      catch (error) {
-        console.log('Error adding supplier: ', error);
-
+      } catch (error) {
+        console.log('Error adding supplier:', error);
       }
     }
   }

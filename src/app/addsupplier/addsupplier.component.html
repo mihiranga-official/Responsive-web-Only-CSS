@@ -1,52 +1,63 @@
 <div class="main-divider">
-  <form action="" [formGroup]="addSuppliers" (ngSubmit)="onSubmit()" class="main-form">
+  <form [formGroup]="addSuppliers" (ngSubmit)="onSubmit()" class="main-form">
     <div class="inform-divider">
       <div class="item">
-        <label for="">Enter Supplier Name:</label>
-        <input formControlName="supplierName" type="text" />
-      </div>
-      <div class="item">
-        <label for="">Enter Supplier Company:</label>
-        <input formControlName="supplierCompany" type="text" />
-        <div *ngIf="addSuppliers.get('supplierCompany')?.invalid && (addSuppliers.get('name')?.dirty||addSuppliers.get('name')?.touched)">
-test
+        <label for="supplierName">Enter Supplier Name:</label>
+        <input formControlName="supplierName" type="text" id="supplierName" />
+        <div *ngIf="addSuppliers.get('supplierName')?.invalid && (addSuppliers.get('supplierName')?.dirty || addSuppliers.get('supplierName')?.touched)">
+          <small class="error">Supplier Name is required.</small>
         </div>
       </div>
+
       <div class="item">
-        <label for="">Enter Supplier Contact NO:</label>
-        <input formControlName="supplierContact" type="text" />
+        <label for="supplierCompany">Enter Supplier Company:</label>
+        <input formControlName="supplierCompany" type="text" id="supplierCompany" />
+        <div *ngIf="addSuppliers.get('supplierCompany')?.invalid && (addSuppliers.get('supplierCompany')?.dirty || addSuppliers.get('supplierCompany')?.touched)">
+          <small class="error">Supplier Company is required.</small>
+        </div>
       </div>
+
       <div class="item">
-        <label for="">Enter Supplier Area:</label>
-        <input formControlName="supplierArea" type="text" />
+        <label for="supplierContact">Enter Supplier Contact NO:</label>
+        <input formControlName="supplierContact" type="text" id="supplierContact" />
+        <div *ngIf="addSuppliers.get('supplierContact')?.invalid && (addSuppliers.get('supplierContact')?.dirty || addSuppliers.get('supplierContact')?.touched)">
+          <small class="error">Supplier Contact is required.</small>
+        </div>
       </div>
+
+      <div class="item">
+        <label for="supplierArea">Enter Supplier Area:</label>
+        <input formControlName="supplierArea" type="text" id="supplierArea" />
+        <div *ngIf="addSuppliers.get('supplierArea')?.invalid && (addSuppliers.get('supplierArea')?.dirty || addSuppliers.get('supplierArea')?.touched)">
+          <small class="error">Supplier Area is required.</small>
+        </div>
+      </div>
+
       <div class="item">
         <button class="addbtn" type="submit" [disabled]="addSuppliers.invalid">Add</button>
       </div>
     </div>
-    <div  class="inform-divider">
+
+    <!-- Display the list of suppliers -->
+    <div class="inform-divider">
       <table>
-        <thead style="height: 100px;">
+        <thead>
           <tr>
-            <th style=" border: 1px solid dodgerblue;  ">Supplier Name</th>
-            <th style=" border: 1px solid dodgerblue;  ">Supplier Company</th>
-            <th style=" border: 1px solid dodgerblue;  ">Supplier Contact NO</th>
-            <th style=" border: 1px solid dodgerblue;  ">Supplier Area</th>
-          
+            <th style="border: 1px solid dodgerblue;">Supplier Name</th>
+            <th style="border: 1px solid dodgerblue;">Supplier Company</th>
+            <th style="border: 1px solid dodgerblue;">Supplier Contact NO</th>
+            <th style="border: 1px solid dodgerblue;">Supplier Area</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let supplier of suppliers$ |async">
-            <td>{{supplier.supplierName}}</td>
-            <td>{{supplier.supplierCompany}}</td>
-            <td>{{supplier.supplierContact }}</td>
-            <td>{{supplier.supplierArea}}</td>
+          <tr *ngFor="let supplier of suppliers$ | async">
+            <td>{{ supplier.supplierName }}</td>
+            <td>{{ supplier.supplierCompany }}</td>
+            <td>{{ supplier.supplierContact }}</td>
+            <td>{{ supplier.supplierArea }}</td>
           </tr>
         </tbody>
       </table>
     </div>
-    
   </form>
-  
- 
 </div>
