@@ -56,7 +56,7 @@
             <td style="border: 1px solid dodgerblue;">{{ supplier.supplierCompany }}</td>
             <td style="border: 1px solid dodgerblue;">{{ supplier.supplierContact }}</td>
             <td style="border: 1px solid dodgerblue;">{{ supplier.supplierArea }}</td>
-            <td><button (click)="removeSupplier()">X</button></td>
+            <td><button (click)="removeSupplier(supplier.supplierName)">X</button></td>
           </tr>
         </tbody>
       </table>

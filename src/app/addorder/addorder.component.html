@@ -1,8 +1,9 @@
+
 <div class="main-divider">
-  <form  action="" class="form-divider">
+  <form  action="" class="">
    
     <div class="form-divider-one">
-      <h2>Add Order Section</h2>
+      <h2 style="border: 2px solid black;">Add Order Section</h2>
       <div class="form-divider-indivder">
       
 
@@ -34,27 +35,6 @@
           <input required name="qty" [(ngModel)]="newOrder.qty" type="tel" />
         </div> 
 
-
-        <!-- <div class="">
-         <label for="">Discount </label>
-          <ng-select
-            name="discountPrice"
-            class="select"
-            id=""
-            required
-            [(ngModel)]="newOrder.discountPrice"
-          >
-            <ng-option option value="" disabled selected
-              >Select Discount</ng-option
-            >
-            <ng-option value="0">0%</ng-option>
-            <ng-option value="1">1%</ng-option>
-            <ng-option value="2">2%</ng-option>
-            <ng-option value="5">5%</ng-option>
-           
-          </ng-select>
-        </div> -->
-
         <div class="">
           <label for="">Add Discount Manual</label>
           <input
@@ -72,7 +52,9 @@
       </div>
 
       
-
+      <div>
+        <button class="print-btn" >Print Receipt <i class="fa fa-save" ></i></button>
+      </div>
       <table
         class="left-table"
         style=" width: 800px"
@@ -142,8 +124,10 @@
          </th>
         </tr>
         </tfoot>
+        
       </table>
-   
+     
+     
     </div>
 
     <div class="recent-orders">

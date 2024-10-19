@@ -57,29 +57,15 @@ export class AddsupplierComponent implements OnInit {
       }
     }
   }
-  // removeSupplier(id: string) {
-  //   this.supplierList = this.supplierList.filter(supplier => supplier.supplierName !== id)
-  // }
 
-//   async removeSupplier() {
-//     if (this.suppliers$.valid) {
-// const 
-//     }
-//   }
-
-async removeSupplier() {
-  if (this.addSuppliers.valid) {
-    const supplierData = this.addSuppliers.value;
+  async removeSupplier(id: string) {
     try {
-      const db = getDatabase();
-      const supplierRef = ref(db, 'suppliers');
-      const newSupplierRef = remove(supplierRef);
-      //await set(newSupplierRef, supplierData);
-      console.log('Supplier added successfully:', supplierData);
-      this.addSuppliers.reset();
+      const supplierRef = ref(this.db,`suppliers/${id}`);
+      await remove(supplierRef);
+      console.log('Supplier removed successfully');
+      this.supplierList = this.supplierList.filter(supplier => supplier.supplierName !== id);
     } catch (error) {
-      console.error('Error adding supplier:', error);
+      console.error('Error removing supplier:', error);
     }
   }
-}
 }
