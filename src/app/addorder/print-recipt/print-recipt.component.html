@@ -1,34 +1,29 @@
+<div class="container" >
+  <!-- Button to open the modal -->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <button class="print-btn" (click)="openModal()" >Print Receipt <i class="fa fa-save" ></i></button> 
+  <!-- Modal structure -->
+  <div class="modal"  *ngIf="isModalOpen">
+    <div class="modal-content" style="width:800px ;height: 600px;">
+      <button class="close-btn" (click)="closeModal()">X</button>
+      <h2>Shop Name</h2>
+      <p>F/143 Kandy Rd Colombo 10 Sri Lanka </p>
+      <p> </p>
+      <p>Contact Number 0716494044 </p>
+      <p>************* Payment Recipt ***************</p>
+      <p>Invoice NO:0000001</p>
+
+       
+
+           
+
+       
 
 
 
-<div class="container">
-  <h2>Modal Example</h2>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
     </div>
+
+    
   </div>
-  
+
 </div>
-
-

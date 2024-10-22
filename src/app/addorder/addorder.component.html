@@ -3,7 +3,7 @@
   <form  action="" class="">
    
     <div class="form-divider-one">
-      <h2 style="border: 2px solid black;">Add Order Section</h2>
+     
       <div class="form-divider-indivder">
       
 
@@ -51,47 +51,47 @@
        
       </div>
 
-      
-      <div>
-        <button class="print-btn" >Print Receipt <i class="fa fa-save" ></i></button>
-      </div>
+<!--       
+      <div >
+       
+        <app-print-recipt ></app-print-recipt>
+
+      </div> -->
       <table
         class="left-table"
-        style=" width: 800px"
+        style=" width: 400px"
       >
         <thead>
           <tr>
-            <th style="border: 1px solid dodgerblue;  padding:2%">Order Id</th>
+            <!-- <th style="border: 1px solid dodgerblue;  padding:2%">Order Id</th> -->
 
-            <th style="border: 1px solid dodgerblue;  padding:2%">Food Name</th>
-            <th style="border: 1px solid dodgerblue;  padding:2%">Price LKR</th>
-            <th style="border: 1px solid dodgerblue;  ">Qty</th>
-            <th style="border: 1px solid dodgerblue;  padding:2%">
-              Discount Presentage
-            </th>
+            <th style="background-color: #d6eeee;" >Food Name</th>
+            <th style="background-color: #d6eeee;" >Price LKR</th>
+            <th style="background-color: #d6eeee;">Qty</th>
+            <th style="background-color: #d6eeee;">Discount  </th>
 
           </tr>
         </thead>
 
         <tbody>
           <tr *ngFor="let item of items; let i = index">
-            <td style="border: 1px solid dodgerblue;  padding:2%">
+            <!-- <td style="border: 1px solid dodgerblue;  padding:2%">
               {{ item.orderId }}
-            </td>
-            <td style="border: 1px solid dodgerblue;  padding:2%">
+            </td> -->
+            <td >
               {{ item.orderName }}
             </td>
-            <td style="border: 1px solid dodgerblue;  padding:2%">
+            <td >
               {{ item.price }}
             </td>
-            <td style="border: 1px solid dodgerblue;  padding:2%">
+            <td >
               {{ item.qty }}
             </td>
-            <td style="border: 1px solid dodgerblue; padding: 1%">
+            <td >
               {{ item.discountPrice  }}
             </td>
-            <td style="border: 1px solid dodgerblue; ">
-              <button class="removr" (click)="removeItem(item.orderId)">
+            <td >
+              <button style="text-align: center;" class="removr" (click)="removeItem(item.orderId)">
                 <i class="fa fa-close"></i>
               </button>
             </td>
@@ -99,48 +99,31 @@
 
         </tbody>
   
-        <tfoot>
- 
-          <tr style="color: rgb(235, 16, 16); margin-top: 20px; ">   
-             <th colspan="5"  style= "border: 3px solid rgb(3, 163, 59); font-size: x-large; text-align: right; ; padding: 1%">  Total Price:
-            {{calculateTotal() | currency: 'Rs. ' : 'symbol' : '1.2-2' }}
-            
-          </th>
-          <tr style="color: rgb(3, 1, 1); margin-top: 20px; ">
-           
-            <th colspan="5" style= "border: 3px solid rgb(3, 163, 59); font-size: x-large; text-align: right; ; padding: 1%">
-              Total Discount:
-            
-              {{calculateDiscount() | currency: 'Rs. ' : 'symbol' : '1.2-2' }}
-              
-            </th>
-        
-          
-          </tr>
-          <tr class="border-fortotal" style="color: rgba(255, 20, 20, 0.842); margin-top: 20px; ">   
-            <th colspan="5"  style=  "border: 3px solid  rgb(7, 130, 201); font-size: x-large; text-align: right; ; padding: 1% ; ">  Total Price After Discount:
-           {{totalPrice() | currency: 'Rs. ' : 'symbol' : '1.2-2' }}
-           
-         </th>
-        </tr>
-        </tfoot>
         
       </table>
-     
-     
+      <div class="price-details" style="margin-top: 50px;">
+        <p><span>Price:</span>  {{calculateTotal() | currency:     'Rs' : 'symbol' : '1.2-2' }}</p>
+        <p><span>Discount:</span>{{calculateDiscount() | currency: 'Rs' : 'symbol' : '1.2-2' }}</p>
+        <p style="color: red;"><span style="color: red;">Total Price:</span> {{totalPrice() | currency:    'Rs' : 'symbol' : '1.2-2' }}</p>
+
+
+
+ 
+      </div>
     </div>
 
-    <div class="recent-orders">
-      <h2 style="border: 2px solid black; ">Recently Adedd Orders</h2>
-      <div class="card-order"  >
-        <div class="card" *ngFor="let item of sharps"  (click)="addItemFromCard(item.foodName,item.realPrice,1,0)">
+   
+      <div class="row" >
+        <div class="column"  *ngFor="let item of sharps"  (click)="addItemFromCard(item.foodName,item.realPrice,1,0)">
+          <div class="card">
           <img class="image-class" [src]="item.image"  alt="" style=" margin: 2%; padding: 2%;">
-          <h3 >{{item.foodName}}</h3>        
-          <h3 > {{item.priced}}</h3> 
+          <p >{{item.foodName}}</p>        
+          <p > {{item.priced}}</p> 
           <label for=""></label>   
         </div>
       </div>
-    </div>
-  </form>
+      </div>
 
+  </form>
 </div>
+

@@ -5,15 +5,17 @@ import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AddOrderService } from './add-order.service';
 import { error } from 'console';
+import { PrintReciptComponent } from "./print-recipt/print-recipt.component";
 
 @Component({
   selector: 'app-addorder',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, NgSelectModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, NgSelectModule, HttpClientModule, PrintReciptComponent],
   templateUrl: './addorder.component.html',
   styleUrl: './addorder.component.scss'
 })
 export class AddorderComponent implements OnInit {
+
 
   sharps: any[] = [];
   sets: any[] = []
@@ -84,7 +86,7 @@ export class AddorderComponent implements OnInit {
 
 
 
-addItemFromCard(orderName: string, price: number, qty: number, discountPrice: number) {
+  addItemFromCard(orderName: string, price: number, qty: number, discountPrice: number) {
     const newId = this.items.length + 1;
     const subTotal = price * qty;
     const disCountAmount = (subTotal * discountPrice) / 100;
@@ -115,7 +117,7 @@ addItemFromCard(orderName: string, price: number, qty: number, discountPrice: nu
     return this.items.reduce((tc, item) => {
 
       const disCountAmount = (item.price * item.discountPrice / 100);
-      return tc + disCountAmount 
+      return tc + disCountAmount
     }, 0);
   }
 
@@ -125,4 +127,7 @@ addItemFromCard(orderName: string, price: number, qty: number, discountPrice: nu
       return tot + totalPrices
     }, 0)
   }
+
+
+
 }
