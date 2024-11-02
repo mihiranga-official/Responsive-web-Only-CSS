@@ -6,6 +6,7 @@ import { DeleteOrderComponent } from './delete-order/delete-order.component';
 import { AddorderComponent } from './addorder/addorder.component';
 import { AddsupplierComponent } from './addsupplier/addsupplier.component';
 import { PrintReciptComponent } from './addorder/print-recipt/print-recipt.component';
+import { SlipsComponent } from './slips/slips.component';
 
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
     {path:'deletePurchase',component:DeleteOrderComponent},
     {path:'addOrder',component:AddorderComponent},
     {path:'addSuppliers',component:AddsupplierComponent},
-    {path:'reciptPrint',component:PrintReciptComponent}
+    {path:'reciptPrint',component:PrintReciptComponent},
+    {path:'slips',component:SlipsComponent}
     
 ];
